@@ -13,7 +13,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "manager")
 public class Manager {
 
-	// https://stackoverflow.com/questions/3325387/infinite-recursion-with-jackson-json-and-hibernate-jpa-issue#answer-18288939
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

@@ -17,7 +17,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
-	
+
 	@Autowired
 	private EmployeeMapper employeeMapper;
 
@@ -44,13 +44,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public void delete(Employee employee) {
-		
+
 		employeeRepository.delete(employee);
 	}
 
 	@Override
 	public List<Employee> readAll() {
-		
+
 		return employeeRepository.findAll();
 	}
 }

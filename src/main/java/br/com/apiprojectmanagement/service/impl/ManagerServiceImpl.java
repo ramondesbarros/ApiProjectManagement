@@ -45,13 +45,13 @@ public class ManagerServiceImpl implements ManagerService {
 
 	@Override
 	public void delete(Manager manager) {
-		
+
 		managerRepository.delete(manager);
 	}
 
 	@Override
 	public List<Manager> readAll() {
-		
+
 		return managerRepository.findAll();
 	}
 }

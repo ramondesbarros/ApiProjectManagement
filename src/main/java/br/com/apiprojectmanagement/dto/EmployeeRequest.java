@@ -3,7 +3,7 @@ package br.com.apiprojectmanagement.dto;
 public class EmployeeRequest {
 
 	private String name;
-	
+
 	private String email;
 
 	private String phone;

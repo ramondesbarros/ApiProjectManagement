@@ -23,7 +23,7 @@ public class Project {
 	private String name;
 
 	private String type;
-	
+
 	private LocalDate deliveryDate;
 
 	@ManyToMany(mappedBy = "projects")

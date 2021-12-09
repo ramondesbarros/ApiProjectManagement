@@ -18,14 +18,14 @@ import br.com.apiprojectmanagement.dto.ManagerRequest;
 import br.com.apiprojectmanagement.service.ManagerService;
 
 /**
- * O que é HATEOAS?
-Hypermedia as the Engine of Application State, ou HATEOAS, é uma “maneira” de implementar 
-APIs REST utilizando hipermídia para indicar que ações ou navegações estão disponíveis para 
-um determinado recurso.
-
-As ações e a navegação são derivadas do estado do recurso e, eventualmente, da própria API. 
-Elas são disponibilizadas para o cliente através de uma coleção de links.
- * */
+ * O que é HATEOAS? Hypermedia as the Engine of Application State, ou HATEOAS, é
+ * uma “maneira” de implementar APIs REST utilizando hipermídia para indicar que
+ * ações ou navegações estão disponíveis para um determinado recurso.
+ * 
+ * As ações e a navegação são derivadas do estado do recurso e, eventualmente,
+ * da própria API. Elas são disponibilizadas para o cliente através de uma
+ * coleção de links.
+ */
 
 @RestController
 @RequestMapping("/manager")

@@ -16,19 +16,19 @@ public class ProjectMapperImpl implements ProjectMapper {
 
 	@Override
 	public Project map(ProjectRequest managerRequest, Long id) {
-		
+
 		Project project = projectRepository.findById(id);
-		
+
 		if (managerRequest.getName() != null) {
-			
+
 			project.setName(managerRequest.getName());
 		}
-		
+
 		if (managerRequest.getType() != null) {
-			
+
 			project.setType(managerRequest.getType());
 		}
-		
+
 		return project;
 	}
 

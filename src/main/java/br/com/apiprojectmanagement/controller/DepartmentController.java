@@ -21,27 +21,24 @@ import br.com.apiprojectmanagement.service.DepartmentService;
 @RequestMapping("/department")
 public class DepartmentController {
 
-	
 	@Autowired
 	private DepartmentService departmentService;
-	
+
 	@PostMapping
 	void create(@RequestBody Department department) {
-		
+
 		departmentService.create(department);
 	}
 
-
 	@GetMapping("/{id}")
 	Optional<Department> read(Long id) {
-		
+
 		return departmentService.read(id);
 	}
 
-
 	@PutMapping
 	void updatePut(Department department, Long id) {
-		
+
 	}
 
 	@PatchMapping("/{id}")
@@ -53,6 +50,5 @@ public class DepartmentController {
 	void delete(Department department) {
 		departmentService.delete(department);
 	}
-
 
 }

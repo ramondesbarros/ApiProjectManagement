@@ -17,19 +17,19 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 	@Autowired
 	private DepartmentRepository departmentRepository;
-	
+
 	@Autowired
 	private DepartmentMapper departmentMapper;
-	
+
 	@Override
 	public void create(Department department) {
-		
+
 		departmentRepository.save(department);
 	}
 
 	@Override
 	public Optional<Department> read(Long id) {
-		
+
 		return departmentRepository.findById(id.intValue());
 	}
 
@@ -46,15 +46,15 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 	@Override
 	public void delete(Department department) {
-		
+
 		departmentRepository.delete(department);
 	}
 
 	@Override
 	public List<Department> readAll() {
-		
+
 		List<Department> departmentAll = departmentRepository.findAll();
-		
+
 		return departmentAll;
 	}
 

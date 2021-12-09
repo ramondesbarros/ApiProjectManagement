@@ -13,23 +13,23 @@ public class EmployeeMapperImpl implements EmployeeMapper {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
-	
+
 	public Employee map(EmployeeRequest employeeRequest, Long id) {
-		
+
 		Employee employee = employeeRepository.findById(id);
-		
+
 		if (employeeRequest.getName() != null) {
 			employee.setName(employeeRequest.getName());
 		}
-		
+
 		if (employeeRequest.getEmail() != null) {
 			employee.setEmail(employeeRequest.getEmail());
 		}
-		
+
 		if (employeeRequest.getPhone() != null) {
 			employee.setPhone(employeeRequest.getPhone());
 		}
-		
+
 		return employee;
 	}
 

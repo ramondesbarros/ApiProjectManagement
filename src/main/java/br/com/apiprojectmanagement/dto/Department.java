@@ -26,9 +26,9 @@ public class Department {
 	private Long id;
 
 	private String name;
-	
+
 	private Local local;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "manager_id", referencedColumnName = "id")
 	private Manager manager;

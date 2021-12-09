@@ -26,4 +26,20 @@ public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
+
+	/**
+	 * O framework Spring, é um dos frameworks Java mais conhecido e utilizado. Esse
+	 * framework implementa um grande número de funções, como injeção de
+	 * dependência, persistência de dados e uma implementação para o padrão MVC para
+	 * a criação de aplicações WEB. O framework Spring começou a ser desenvolvido em
+	 * 2002 e foi lançado em dezembro de 2013.
+	 * 
+	 */
+	
+	/**
+	 * Injeção de dependência
+	 * Quando aplicamos o conceito de inversão de controle, estamos na realidade transferindo 
+	 * a responsabilidade de verificar a ocorrência de eventos no sistema para um sistema 
+	 * maior,
+	 * */
 }

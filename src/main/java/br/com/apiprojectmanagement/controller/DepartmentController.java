@@ -1,6 +1,5 @@
 package br.com.apiprojectmanagement.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.apiprojectmanagement.dto.Department;
+import br.com.apiprojectmanagement.dto.DepartmentRequest;
 import br.com.apiprojectmanagement.service.DepartmentService;
 
 @RestController
@@ -31,11 +31,13 @@ public class DepartmentController {
 		departmentService.create(department);
 	}
 
-	
+
+	@GetMapping("/{id}")
 	Optional<Department> read(Long id) {
 		
 		return departmentService.read(id);
 	}
+
 
 	@PutMapping
 	void updatePut(Department department, Long id) {
@@ -43,8 +45,8 @@ public class DepartmentController {
 	}
 
 	@PatchMapping("/{id}")
-	void updatePath(@RequestBody Department department, @PathVariable Long id) {
-		
+	void updatePath(@RequestBody DepartmentRequest departmentRequest, @PathVariable Long id) {
+		departmentService.updatePath(departmentRequest, id);
 	}
 
 	@DeleteMapping
@@ -52,10 +54,5 @@ public class DepartmentController {
 		departmentService.delete(department);
 	}
 
-	@GetMapping
-	List<Department> readAll() {
-		
-		return departmentService.readAll();
-	}
 
 }

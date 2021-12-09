@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import br.com.apiprojectmanagement.dto.Project;
+import br.com.apiprojectmanagement.dto.ProjectRequest;
 
 public interface ProjectService {
 
@@ -15,7 +16,7 @@ public interface ProjectService {
 	void updatePut(Project project, Long id);
 
 	//Atualizar alguns dados
-	void updatePath(Project project, Long id);
+	void updatePath(ProjectRequest projectRequest, Long id);
 
 	void delete(Project project);
 

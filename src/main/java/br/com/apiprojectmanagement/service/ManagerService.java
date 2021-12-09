@@ -4,16 +4,17 @@ import java.util.List;
 import java.util.Optional;
 
 import br.com.apiprojectmanagement.dto.Manager;
+import br.com.apiprojectmanagement.dto.ManagerRequest;
 
 public interface ManagerService {
 
 	void create(Manager manager);
 
-	Optional<Manager> read(Long id);
+	Manager read(Long id);
 
-	void updatePut(Manager manager, Long id);
+	void updatePut(Manager managerRequest, Long id);
 
-	void updatePath(Manager manager, Long id);
+	void updatePath(ManagerRequest managerRequest, Long id);
 
 	void delete(Manager manager);
 

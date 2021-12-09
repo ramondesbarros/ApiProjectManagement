@@ -8,4 +8,5 @@ import br.com.apiprojectmanagement.dto.Department;
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Integer> {
 
+	Department findById(Long id);
 }

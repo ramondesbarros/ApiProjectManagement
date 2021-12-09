@@ -8,4 +8,5 @@ import br.com.apiprojectmanagement.dto.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
+	Employee findById(Long id);
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import br.com.apiprojectmanagement.dto.Employee;
+import br.com.apiprojectmanagement.dto.EmployeeRequest;
 
 public interface EmployeeService {
 
@@ -13,7 +14,7 @@ public interface EmployeeService {
 
 	void updatePut(Employee employee, Long id);
 
-	void updatePath(Employee employee, Long id);
+	void updatePath(EmployeeRequest employeeRequest, Long id);
 
 	void delete(Employee employee);
 

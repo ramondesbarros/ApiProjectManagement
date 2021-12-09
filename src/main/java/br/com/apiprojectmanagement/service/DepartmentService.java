@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import br.com.apiprojectmanagement.dto.Department;
+import br.com.apiprojectmanagement.dto.DepartmentRequest;
 
 public interface DepartmentService {
 
@@ -13,7 +14,7 @@ public interface DepartmentService {
 
 	void updatePut(Department department, Long id);
 
-	void updatePath(Department department, Long id);
+	void updatePath(DepartmentRequest departmentRequest, Long id);
 
 	void delete(Department department);
 

@@ -8,4 +8,5 @@ import br.com.apiprojectmanagement.dto.Project;
 @Repository
 public interface ProjectRepository extends JpaRepository<Project, Integer> {
 
+	public Project findById(Long id);
 }

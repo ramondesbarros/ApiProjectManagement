@@ -1,6 +1,16 @@
 package br.com.apiprojectmanagement.dto;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class ProjectRequest {
+
+	@NotNull
+	@Size(min=2, max=30)
+	private String name;
+
+	@NotNull
+	private String type;
 
 	public String getName() {
 		return name;
@@ -17,9 +27,5 @@ public class ProjectRequest {
 	public void setType(String type) {
 		this.type = type;
 	}
-
-	private String name;
-
-	private String type;
 
 }

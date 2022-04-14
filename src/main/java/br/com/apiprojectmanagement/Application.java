@@ -2,6 +2,7 @@ package br.com.apiprojectmanagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 /**
  * 
@@ -20,7 +21,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * design, a administração e o uso, além de fornecer oportunidades de inovação.
  */
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "br.com.apiprojectmanagement")
+@EntityScan(basePackages = "br.com.apiprojectmanagement.dto")
 public class Application {
 
 	public static void main(String[] args) {
@@ -42,4 +44,15 @@ public class Application {
 	 * a responsabilidade de verificar a ocorrência de eventos no sistema para um sistema 
 	 * maior,
 	 * */
+	
+	/**
+	 * Uma descrição melhor seria portanto a de que é um framework baseado no conceito de 
+	 * injeção de dependências, que é uma especialização da inversão de controle. Pronto: 
+	 * agora temos uma descrição mais interessante. Na injeção de dependências, não é a 
+	 * classe cliente a responsável por definir quais serão suas dependências. Esta 
+	 * responsabilidade é delegada a um container de injeção de dependências.
+
+	 * */
+	
+	//https://spring.io/guides/gs/validating-form-input/
 }

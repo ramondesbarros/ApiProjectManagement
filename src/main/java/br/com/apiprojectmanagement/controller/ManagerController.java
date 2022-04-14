@@ -2,6 +2,8 @@ package br.com.apiprojectmanagement.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,7 +37,7 @@ public class ManagerController {
 	private ManagerService managerService;
 
 	@PostMapping
-	void create(@RequestBody Manager manager) {
+	void create(@Valid @RequestBody Manager manager) {
 
 		managerService.create(manager);
 	}
@@ -66,13 +68,13 @@ public class ManagerController {
 	}
 
 	@PutMapping("/{id}")
-	void updatePut(@RequestBody Manager manager, @PathVariable Long id) {
+	void updatePut(@Valid @RequestBody Manager manager, @PathVariable Long id) {
 
 		managerService.updatePut(manager, id);
 	}
 
 	@PatchMapping("/{id}")
-	void updatePath(@RequestBody ManagerRequest managerRequest, @PathVariable Long id) {
+	void updatePath(@Valid @RequestBody ManagerRequest managerRequest, @PathVariable Long id) {
 
 		managerService.updatePath(managerRequest, id);
 	}

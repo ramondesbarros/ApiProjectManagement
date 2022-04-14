@@ -3,6 +3,8 @@ package br.com.apiprojectmanagement.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +29,7 @@ public class ProjectController {
 	private ProjectService projectService;
 
 	@PostMapping
-	void create(@RequestBody Project project) {
+	void create(@Valid @RequestBody Project project) {
 		projectService.create(project);
 	}
 
@@ -36,13 +38,19 @@ public class ProjectController {
 		return projectService.read(id);
 	}
 
+	@GetMapping
+	List<Project> readAll() {
+
+		return projectService.readAll();
+	}
+
 	@PutMapping
-	void updatePut(Project project, Long id) {
+	void updatePut(@Valid @RequestBody Project project, Long id) {
 
 	}
 
 	@PatchMapping
-	void updatePath(@RequestBody ProjectRequest projectRequest, @RequestParam Long id) {
+	void updatePath(@Valid @RequestBody ProjectRequest projectRequest, @RequestParam Long id) {
 
 		projectService.updatePath(projectRequest, id);
 	}
@@ -50,12 +58,6 @@ public class ProjectController {
 	@DeleteMapping
 	void delete(Project project) {
 		projectService.delete(project);
-	}
-
-	@GetMapping
-	List<Project> readAll() {
-
-		return projectService.readAll();
 	}
 
 }

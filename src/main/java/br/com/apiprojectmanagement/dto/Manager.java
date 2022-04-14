@@ -6,6 +6,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.springframework.lang.NonNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -17,10 +22,16 @@ public class Manager {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@NotNull
+	@Size(min=2, max=30)
 	private String name;
 
+	@NonNull
+	@Email
 	private String email;
 
+	@NotNull
+	@Size(min=10, max=11)
 	private String phone;
 
 	@JsonIgnore

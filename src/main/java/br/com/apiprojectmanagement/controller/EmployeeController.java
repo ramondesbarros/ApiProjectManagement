@@ -3,6 +3,8 @@ package br.com.apiprojectmanagement.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +28,7 @@ public class EmployeeController {
 	private EmployeeService employeeService;
 
 	@PostMapping
-	void create(@RequestBody Employee employee) {
+	void create(@Valid @RequestBody Employee employee) {
 
 		employeeService.create(employee);
 	}
@@ -36,13 +38,19 @@ public class EmployeeController {
 		return employeeService.read(id);
 	}
 
+	@GetMapping
+	List<Employee> readAll() {
+
+		return employeeService.readAll();
+	}
+
 	@PutMapping("/{id}")
-	void updatePut(@RequestBody Employee employee, @PathVariable Long id) {
+	void updatePut(@Valid @RequestBody Employee employee, @PathVariable Long id) {
 		employeeService.updatePut(employee, id);
 	}
 
 	@PatchMapping("/{id}")
-	void updatePath(@RequestBody EmployeeRequest employeeRequest, @PathVariable Long id) {
+	void updatePath(@Valid @RequestBody EmployeeRequest employeeRequest, @PathVariable Long id) {
 		employeeService.updatePath(employeeRequest, id);
 	}
 
@@ -50,12 +58,6 @@ public class EmployeeController {
 	void delete(Employee employee) {
 
 		employeeService.delete(employee);
-	}
-
-	@GetMapping
-	List<Employee> readAll() {
-
-		return employeeService.readAll();
 	}
 
 }

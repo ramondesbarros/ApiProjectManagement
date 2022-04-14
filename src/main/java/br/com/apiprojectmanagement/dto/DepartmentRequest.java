@@ -1,9 +1,14 @@
 package br.com.apiprojectmanagement.dto;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import br.com.apiprojectmanagement.enums.Local;
 
 public class DepartmentRequest {
 
+	@NotNull
+	@Size(min=2, max=30)
 	private String name;
 
 	private Local local;

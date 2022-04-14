@@ -2,6 +2,8 @@ package br.com.apiprojectmanagement.controller;
 
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +27,7 @@ public class DepartmentController {
 	private DepartmentService departmentService;
 
 	@PostMapping
-	void create(@RequestBody Department department) {
+	void create(@Valid @RequestBody Department department) {
 
 		departmentService.create(department);
 	}
@@ -42,7 +44,7 @@ public class DepartmentController {
 	}
 
 	@PatchMapping("/{id}")
-	void updatePath(@RequestBody DepartmentRequest departmentRequest, @PathVariable Long id) {
+	void updatePath(@Valid @RequestBody DepartmentRequest departmentRequest, @PathVariable Long id) {
 		departmentService.updatePath(departmentRequest, id);
 	}
 
